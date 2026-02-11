@@ -26,7 +26,7 @@ class _Carrinho2State extends State<Carrinho2> {
             children: [
               Text(myChangeNotifier.childAspectRatio.toString()),
               ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(),
+                 onPressed: () => Navigator.of(context).pushNamed('/carrinho'),           
                 child: Row(
                   children: [
                     Icon(Icons.arrow_back),

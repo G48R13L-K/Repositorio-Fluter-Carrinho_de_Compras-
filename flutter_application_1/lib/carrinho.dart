@@ -75,7 +75,7 @@ class _CarrinhoState extends State<Carrinho> {
               //   ),
               // ),
               onPressed: () => Navigator.of(context).pushNamed('/carrinho2'),
-              child: Text('Navegar Carrinho 2'),
+              child: Text('Navegar Carrinho 2 (push)'),
             ),
             ElevatedButton(
               onPressed: () =>
@@ -142,6 +142,10 @@ class _CarrinhoState extends State<Carrinho> {
               ),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: ()=> Navigator.of(context).pushNamed('/formulario-produto'),
+        child: Icon(Icons.add, color: Colors.green,),
+        
         ),
       ),
     );
