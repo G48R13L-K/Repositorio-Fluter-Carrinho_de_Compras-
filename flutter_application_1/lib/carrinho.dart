@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/carrinho2.dart';
+
 import 'package:flutter_application_1/carrinho2_arguments.dart';
 import 'package:flutter_application_1/my_change_notfier.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +12,15 @@ class Carrinho extends StatefulWidget {
 }
 
 class _CarrinhoState extends State<Carrinho> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<MyChangeNotfier>().fetchProductsFromSupabase();
+    },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     MyChangeNotfier myChangeNotfier = context.read();
@@ -68,15 +77,15 @@ class _CarrinhoState extends State<Carrinho> {
         ),
         body: Column(
           children: [
-            ElevatedButton(
-              // onPressed: () => Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => Carrinho2(),
-              //   ),
-              // ),
-              onPressed: () => Navigator.of(context).pushNamed('/carrinho2'),
-              child: Text('Navegar Carrinho 2 (push)'),
-            ),
+            // ElevatedButton(
+            //   // onPressed: () => Navigator.of(context).push(
+            //   //   MaterialPageRoute(
+            //   //     builder: (context) => Carrinho2(),
+            //   //   ),
+            //   // ),
+            //   onPressed: () => Navigator.of(context).pushNamed('/carrinho2'),
+            //   child: Text('Navegar Carrinho 2 (push)'),
+            // ),
             ElevatedButton(
               onPressed: () =>
                   Navigator.of(
